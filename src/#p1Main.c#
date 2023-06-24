@@ -14,7 +14,7 @@ int main(int argc, char **argv){
   for (char** p = &argv[1]; *p; p++){
     printf("Argument: %s\n", *p);
   }
-  printf("Exited from Argument");
+  print
   char*x = argv[1];
   int tokenNum = count_tokens(x); 
     

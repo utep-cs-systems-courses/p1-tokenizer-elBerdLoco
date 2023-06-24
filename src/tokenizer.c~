@@ -1,7 +1,5 @@
-#ifndef _TOKENIZER_
-#define _TOKENIZER_
-
 #include <stdlib.h>
+#include "tokenizer.h"
 
 /* Return true (non-zero) if c is a whitespace characer
    ('\t' or ' ').  
@@ -100,5 +98,3 @@ void free_tokens(char **tokens){
   }
   free(tokens);
 }
-
-#endif
