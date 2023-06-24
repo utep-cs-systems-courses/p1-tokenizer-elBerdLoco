@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 #ifndef _TOKENIZER_
 #define _TOKENIZER_
 

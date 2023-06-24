@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "tokenizer.h"
 
 /*
@@ -11,13 +12,17 @@ int main(int argc, char **argv){
   /*
     If *p = "Hello there", then **p = "Hello", and **p+1 = "there" 
    */
-  
-  for (char **p = &argv[1]; *p!=NULL; **p++){
-    printf("Argument: %s\n", *p);
-  }
+  char **p = &argv[1];
+  size_t length = strlen(argv[1]);
+  for (int i = 0;  *p != '\0'; p++){  
+      printf("Argument: %s\n", *p);
+      /* if(*p != "(null)"){
+	break;
+	  }
+      p++;
+      */
+    }
   printf("Exited from Argument");
-  char*x = argv[1];
-  int tokenNum = count_tokens(x); 
     
   /* char *str = argv[1];
   printf("uncut token: %s\n", str);
