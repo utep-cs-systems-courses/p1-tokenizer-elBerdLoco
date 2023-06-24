@@ -11,7 +11,8 @@ int main(int argc, char **argv){
   /*
     If *p = "Hello there", then **p = "Hello", and **p+1 = "there" 
    */
-  for (char** p = &argv[1]; *p; p++){
+  
+  for (char **p = &argv[1]; *p!=NULL; **p++){
     printf("Argument: %s\n", *p);
   }
   printf("Exited from Argument");
