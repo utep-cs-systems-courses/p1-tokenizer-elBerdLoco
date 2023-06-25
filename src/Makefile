@@ -11,7 +11,7 @@ CFLAGS=-g -O3 # -g for debug, -O3 for optimization
 all: prog
 
 # asciidraw (target) depends on all object files (prerequisites)
-asciidraw: $(OBJS) 
+prog: $(OBJS) 
 	cc -o prog $(CFLAGS) $(OBJS)
 
 # all object files built from c files that include draw.h
@@ -21,5 +21,5 @@ $(OBJS): tokenizer.h
 clean:
 	rm -f *.o prog
 
-run:prog
+run: prog
 	./prog

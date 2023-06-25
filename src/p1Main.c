@@ -14,16 +14,20 @@ int main(int argc, char **argv){
    */
   char **p = &argv[1];
   size_t length = strlen(argv[1]);
+  
+  
   for (;  *p != NULL; p++){  
       printf("Argument: %s\n", *p);
-      /* if(*p != "(null)"){
+      /*
+       if(*p != "(null)"){
 	break;
 	  }
       p++;
-      */
+     */ 
     }
+  
   printf("Exited from Argument\n");
-    
+  
   /* char *str = argv[1];
   printf("uncut token: %s\n", str);
   
