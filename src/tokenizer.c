@@ -20,9 +20,8 @@ int non_space_char(char c){
    space-separated token in zero-terminated str.  Return a zero pointer if 
    str does not contain any tokens. */
 char *token_start(char *str){
-  char *p = str;
-  while (p && space_char(*p)) { p++; }
-  return p;
+  while (space_char(*str)) {if(*str == '\0') {return NULL;} str++;}
+  return str;
   //put return NULL here when rewriting the function.
 }
 
@@ -77,7 +76,7 @@ char **tokenize(char* str){
     char *terminator = token_terminator(token);
     int tokenLength = terminator - token;
     tokens[i] = copy_str(token, tokenLength);
-    token = token_start(terminator);
+    token = token_start(terminator + 1);
     i++;
   }
   tokens[tokenCount] = NULL;
