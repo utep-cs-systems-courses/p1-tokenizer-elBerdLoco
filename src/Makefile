@@ -1,5 +1,3 @@
-# comments begin with #
-
 # for convenience, define variable $(OBJS) to list of object files
 OBJS= p1Main.o tokenizer.o
 

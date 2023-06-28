@@ -6,7 +6,7 @@
    ('\t' or ' ').  
    Zero terminators are not printable (therefore false) */
 int space_char(char c){
-  return (c == ' ' || c == '\t');
+  return ((c == ' ' || c == '\t') && c !='\0');
 }
 
 /* Return true (non-zero) if c is a non-whitespace 
@@ -20,13 +20,16 @@ int non_space_char(char c){
    space-separated token in zero-terminated str.  Return a zero pointer if 
    str does not contain any tokens. */
 char *token_start(char *str){
-  while (*str && space_char(*str)) { str++; }
-  return str;
+  char *p = str;
+  while (p && space_char(*p)) { p++; }
+  return p;
+  //put return NULL here when rewriting the function.
 }
 
 /* Returns a pointer terminator char following *token */
 char *token_terminator(char *token){
-  while (*token != '\0' && non_space_char(*token)){ token++; }
+  char *p = token;
+  while (*p != '\0' && non_space_char(*p)){ p++; }
   return token;
 }
 
