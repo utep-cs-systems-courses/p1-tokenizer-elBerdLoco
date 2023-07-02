@@ -13,23 +13,26 @@ int space_char(char c){
    character (not tab or space).  
    Zero terminators are not printable (therefore false) */ 
 int non_space_char(char c){
-  return !space_char(c);
+  return ((c != ' ' || c != '\t') && c !='\0');
 }
 
 /* Returns a pointer to the first character of the next 
    space-separated token in zero-terminated str.  Return a zero pointer if 
    str does not contain any tokens. */
 char *token_start(char *str){
-  while (space_char(*str)) {if(*str == '\0') {return NULL;} str++;}
-  return str;
+  char *sta = str;
+  while (*sta != '\0' && space_char(*sta)) 
+    str++;
+  return (*str == '\0') ? NULL : str;
   //put return NULL here when rewriting the function.
 }
 
 /* Returns a pointer terminator char following *token */
 char *token_terminator(char *token){
-  char *p = token;
-  while (*p != '\0' && non_space_char(*p)){ p++; }
-  return token;
+  char *ter = token;
+  while (*ter != '\0' && non_space_char(*ter))
+    ter++; 
+  return ter;
 }
 
 /* Counts the number of tokens in the string argument. */

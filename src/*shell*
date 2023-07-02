@@ -1,0 +1,199 @@
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make clean 
+rm -f *.o prog
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make all 
+cc -g -O3    -c -o p1Main.o p1Main.c
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -g -O3    -c -o history.o history.c
+cc -o prog -g -O3  p1Main.o tokenizer.o history.o
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make clean 
+rm -f *.o prog
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make all 
+cc -g -O3    -c -o p1Main.o p1Main.c
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -g -O3    -c -o history.o history.c
+cc -o prog -g -O3  p1Main.o tokenizer.o history.o
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+hello
+hello
+Character found
+Character found
+Character found
+Character found
+Character found
+helloexit
+exit
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make clean 
+rm -f *.o prog
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make all 
+cc -g -O3    -c -o p1Main.o p1Main.c
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -g -O3    -c -o history.o history.c
+cc -o prog -g -O3  p1Main.o tokenizer.o history.o
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+HELLO
+HELLO
+Character found
+Character found
+Character found
+Character found
+Character found
+Pointer exa = HELLOhi
+hi
+Character found
+Character found
+Pointer exa = hi
+
+Pointer exa = exit
+exit
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make clean 
+rm -f *.o prog
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make all
+cc -g -O3    -c -o p1Main.o p1Main.c
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -g -O3    -c -o history.o history.c
+cc -o prog -g -O3  p1Main.o tokenizer.o history.o
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+hello
+hello
+Character found
+Character found
+Character found
+Character found
+Character found
+Pointer exa = hello
+exit
+exit
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make clean 
+rm -f *.o prog
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make all 
+cc -g -O3    -c -o p1Main.o p1Main.c
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -g -O3    -c -o history.o history.c
+cc -o prog -g -O3  p1Main.o tokenizer.o history.o
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+hello
+hello
+Character found
+Character found
+Character found
+Character found
+Character found
+Pointer exa = @JL+ı
+hi
+hi
+Character found
+Character found
+Pointer exa = @JL+ı
+fdf
+fdf
+Character found
+Character found
+Character found
+Pointer exa = @JL+ı
+sdff
+sdff
+Character found
+Character found
+Character found
+Character found
+Pointer exa = @JL+ı
+exit
+exit
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+hello
+hello
+Character found
+Character found
+Character found
+Character found
+Character found
+Pointer exa =  ¿(ı
+exit
+exit
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./rp
+bash: ./rp: No such file or directory
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> pro
+If 'pro' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf pro
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+hi
+hi
+Character found
+Character found
+Pointer exa = ÀD—Àü
+exit
+exit
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+hola
+hola
+Character found
+Character found
+Character found
+Character found
+Pointer exa = à£2”ü
+exit
+exit
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+hi
+hi
+Character found
+Character found
+Pointer exa = 
+hrllo
+hrllo
+Character found
+Character found
+Character found
+Character found
+Character found
+Pointer exa = 
+exit
+exit
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+hello
+hello
+Character found
+Character found
+Character found
+Character found
+Character found
+Pointer exa = ğax¶ş
+hi
+hi
+Character found
+Character found
+Pointer exa = ğax¶ş
+exit
+exit
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+hello
+hello
+Character found
+Character found
+Character found
+Character found
+Character found
+Pointer exa = ÀJÿøü
+exit
+exit
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make clean 
+rm -f *.o prog
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> make all 
+cc -g -O3    -c -o p1Main.o p1Main.c
+cc -g -O3    -c -o tokenizer.o tokenizer.c
+cc -g -O3    -c -o history.o history.c
+cc -o prog -g -O3  p1Main.o tokenizer.o history.o
+student@systems-vm:~/Projects/p1-tokenizer-elBerdLoco/src> ./prog 
+hello
+hello
+Character found
+Character found
+Character found
+Character found
+Character found
+Pointer exa = á.ûü
+hi
+hi
+Character found
+Character found
+Pointer exa = á.ûü
