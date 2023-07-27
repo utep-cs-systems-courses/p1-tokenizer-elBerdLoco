@@ -36,7 +36,14 @@ int main(){
   int ans5;
   printf("Test for token count\nUsing string: %s\n", countTokens);
   ans5 = count_tokens(countTokens);
-  printf("Total: %d", ans5);
+  printf("Total: %d\n", ans5);
+
+  //copy string
+  char* string = "Hello, world!";
+  short len = 5;
+  printf("Test for copy token\nUsing string: %s\n", string);
+  char* newString = copy_str(string, len); 
+  printf("New string: %s\n", newString);
   
   return 0;
 }

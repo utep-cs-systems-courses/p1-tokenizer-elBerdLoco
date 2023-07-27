@@ -54,26 +54,34 @@ char *token_terminator(char *token){
 }
 
 /* Counts the number of tokens in the string argument. */
-int count_tokens(char *str){
+int count_tokens(char *str)
+{
   int count = 0;
-  char *token1, *token2;
-  token1 = str;
-  while(*token1 != '\0' ){
-    token2 = token_terminator(token1);
-    count++;
-    token1 = token_start(token2);
-  }
+  char *start, *end;
+  end = str;
+  while(start = token_start(end))
+    {
+      end = token_terminator(start);
+      count++;
+    }
   return count;
 }
 
 /* Returns a fresly allocated new zero-terminated string 
    containing <len> chars from <inStr> */
-char *copy_str(char *inStr, short len){
-  char *newStr = (char *)malloc((len + 1) * sizeof(char));
-  for(int i = 0; i<len; ++i){
-    newStr[i] = inStr[i];
-  }
-  newStr[len] = '\0';
+char *copy_str(char *inStr, short len)
+{
+  char* newStr = (char*) malloc ((len+1) * sizeof(char));
+  char* inPtr = inStr;
+  char* newPtr = newStr;
+  while (len > 0 && *inPtr != '\0')
+    {
+      *newPtr = *inPtr;
+      newPtr++;
+      inPtr++;
+      len--;
+    }
+  *newPtr = '\0';
   return newStr;
 }
 
