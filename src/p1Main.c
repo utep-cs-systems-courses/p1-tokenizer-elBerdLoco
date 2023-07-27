@@ -44,6 +44,23 @@ int main(){
   printf("Test for copy token\nUsing string: %s\n", string);
   char* newString = copy_str(string, len); 
   printf("New string: %s\n", newString);
-  
+
+  //tokenize, print tokens, & free tokens
+  char* tokenString = "My dog is derpy";
+  printf("String being tokenized: %s\n", tokenString);
+  char** tokens = tokenize(tokenString);
+  for(int i = 0; tokens[i] != NULL; i++)
+    {
+      printf("Token #%d: %s\n", i, tokens[i]);
+    }
+  printf("Testing print tokens\n");
+  print_tokens(tokens);
+  //Free tokens should cause a crash when trying to access the freed tokens
+  printf("Testing if memory is being freed\n");
+  free_tokens(tokens);
+  if(tokens == NULL)
+    {
+     printf("It didn't work\n");
+    }
   return 0;
 }
