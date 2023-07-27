@@ -1,47 +1,67 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "tokenizer.h"
+
 
 /* Return true (non-zero) if c is a whitespace characer
    ('\t' or ' ').  
    Zero terminators are not printable (therefore false) */
-int space_char(char c){
+/* int space_char(char c){
   return ((c == ' ' || c == '\t') && c !='\0');
+}
+*/
+
+int space_char(char c){
+  return ((c == ' ' || c == '\t') && c != '\0');
 }
 
 /* Return true (non-zero) if c is a non-whitespace 
    character (not tab or space).  
    Zero terminators are not printable (therefore false) */ 
 int non_space_char(char c){
-  return ((c != ' ' || c != '\t') && c !='\0');
+  return !space_char(c);
 }
 
 /* Returns a pointer to the first character of the next 
    space-separated token in zero-terminated str.  Return a zero pointer if 
    str does not contain any tokens. */
-char *token_start(char *str){
-  char *sta = str;
-  while (*sta != '\0' && space_char(*sta)) 
-    str++;
-  return (*str == '\0') ? NULL : str;
+char *token_start(char *str)
+{
+  while (*str != '\0')
+    {
+      if(non_space_char(*str))
+	{
+	  return str;
+	}
+      str++;
+    }
   //put return NULL here when rewriting the function.
+  return NULL;
 }
 
 /* Returns a pointer terminator char following *token */
 char *token_terminator(char *token){
   char *ter = token;
-  while (*ter != '\0' && non_space_char(*ter))
-    ter++; 
+  while (*ter != '\0')
+    {
+    if(space_char(*ter)){
+      return ter;
+    }
+    ter++;
+  } 
   return ter;
 }
 
 /* Counts the number of tokens in the string argument. */
 int count_tokens(char *str){
   int count = 0;
-  char *token = token_start(str);
-  while (token != NULL) {
+  char *token1, *token2;
+  token1 = str;
+  while(*token1 != '\0' ){
+    token2 = token_terminator(token1);
     count++;
-    token = token_start(token_terminator(token));
+    token1 = token_start(token2);
   }
   return count;
 }
@@ -50,14 +70,10 @@ int count_tokens(char *str){
    containing <len> chars from <inStr> */
 char *copy_str(char *inStr, short len){
   char *newStr = (char *)malloc((len + 1) * sizeof(char));
-  char *dest = newStr;
-  while (len > 0) {
-    *dest = *inStr;
-    dest++;
-    inStr++;
-    len++;
+  for(int i = 0; i<len; ++i){
+    newStr[i] = inStr[i];
   }
-  *dest = '\0';
+  newStr[len] = '\0';
   return newStr;
 }
 

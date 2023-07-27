@@ -9,27 +9,34 @@ argv[0] contains the programs name, argv[1] contaains the string input
 #define MAX_INPUT 256
 
 int main(){
-  char input[MAX_INPUT];
-  while (1){
-    fgets(input, MAX_INPUT, stdin);
-    input[strcspn(input, "\n")] = '\0';
-    
-    printf("%s\n");
-    if(strncmp(input, "exit", MAX_INPUT) == 0) {break;}
 
-    for (int i = 0; i < strlen(input); i++){
-      if(space_char(input[i])) {printf("Space found\n");}
-      if(non_space_char(input[i])){printf("Character found\n");}
-    }
-    char *start = token_start(input);
-    while (start != NULL) {
-      printf("Token: %s\n", start);
-      start++;
-      
-      start = token_start(start+strlen(start));
-      printf("Token: %s\n", start);
-      
-    }
-  }
+  //space and non space char
+  char* a = "Ben is cool";
+  char* b = " ";
+  int ans1, ans2;
+  
+  printf("Test Space & non space\na = %s\nb = %s\n", a, b);
+  ans1 = space_char(*a);
+  ans2 = space_char(*b);
+  printf("a: %d\nb: %d\n",ans1, ans2);
+
+  //token start and token terminator
+  char* start = "     Hello World";
+  char* ans3;
+  char* ans4;
+  
+  printf("Test for token start and token terminator\nUsing string: %s\n", start);
+  ans3 = token_start(start);
+  printf("Start: %s\n", ans3);
+  ans4 = token_terminator(ans3);
+  printf("Terminator: %s\n", ans4);
+
+  //count tokens
+  char* countTokens = "My dog has fleas";
+  int ans5;
+  printf("Test for token count\nUsing string: %s\n", countTokens);
+  ans5 = count_tokens(countTokens);
+  printf("Total: %d", ans5);
+  
   return 0;
 }
